@@ -14,7 +14,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.security.Key;
 import java.util.List;
 
 public class BaseStep extends BaseTest {
@@ -41,7 +40,7 @@ public class BaseStep extends BaseTest {
 
     public WebElement findElementByKey(String key) {
         By infoParam = getBy(key);
-        WebDriverWait webDriverWait = new WebDriverWait(driver, 30);
+        WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
 
         WebElement webElement = webDriverWait.until(ExpectedConditions.presenceOfElementLocated(infoParam));
         ((JavascriptExecutor) driver).executeScript(
@@ -55,7 +54,7 @@ public class BaseStep extends BaseTest {
 
         WebElement webElement;
         int loopCount = 0;
-        while (loopCount < 200) {
+        while (loopCount < 10) {
             try {
                 webElement = findElementByKey(key);
                 //logger.info("Element:'" + key + "' found.");
@@ -98,9 +97,13 @@ public class BaseStep extends BaseTest {
         }
     }
 
-    @Step("Enter <key>")
-    public void enter(String key) {
-        findElementByKey(key).sendKeys(Keys.RETURN);
+    @Step({"Click to element <key> with focus",
+            "<key> elementine focus ile tıkla"})
+    public void clickElementWithFocus(String key) {
+        actions.moveToElement(findElementByKey(key));
+        actions.click();
+        actions.build().perform();
+        logger.info(key + " elementine focus ile tıklandı.");
     }
 
     private void hoverElement(WebElement element) {
@@ -116,7 +119,7 @@ public class BaseStep extends BaseTest {
                 System.out.println("File already exists.");
             }
 
-            FileWriter writer = new FileWriter(filePath, true);
+            FileWriter writer = new FileWriter(filePath);
             writer.write(productName + " - " + price);
             writer.write("\n");
             writer.close();

@@ -40,7 +40,7 @@ public class BaseTest {
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
 
-        webDriverWait = new WebDriverWait(driver, 45, 150);
+        webDriverWait = new WebDriverWait(driver, 40, 150);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get(baseUrl);
     }
@@ -64,7 +64,6 @@ public class BaseTest {
 
     @AfterScenario
     public void tearDown() {
-
         driver.quit();
     }
 

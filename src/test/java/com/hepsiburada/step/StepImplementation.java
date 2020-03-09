@@ -40,7 +40,7 @@ public class StepImplementation extends BaseStep {
     @Step("Validate login")
     public void validateLogin() {
         waitBySeconds(2);
-        WebElement loginUserNameLabel = waitElementLoadByKey("loginUserName");
+        WebElement loginUserNameLabel = findElementByKey("loginUserName");
         String loginUserName = loginUserNameLabel.getText();
         Assert.assertEquals("Test Automation", loginUserName);
         logger.info("Login işlemi başarılı");
@@ -237,6 +237,6 @@ public class StepImplementation extends BaseStep {
         String price = element.getText().split(" ")[0];
         WebElement totalPriceLabel = findElementByKey("totalPrice");
         String totalPrice = totalPriceLabel.getText().split(" ")[0];
-        Assert.assertEquals("Tutarlar eşleşti!", price, totalPrice);
+        Assert.assertEquals(price, totalPrice);
     }
 }

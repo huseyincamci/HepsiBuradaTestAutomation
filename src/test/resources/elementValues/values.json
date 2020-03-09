@@ -36,8 +36,8 @@
   },
   {
     "key": "cartItemCount",
-    "value": "cartItemCount",
-    "type": "id"
+    "value": "span[id=\"cartItemCount\"]>label",
+    "type": "css"
   },
   {
     "key": "totalPrice",
@@ -51,8 +51,8 @@
   },
   {
     "key": "loginUserName",
-    "value": "//a[@class='login user-name']",
-    "type": "xpath"
+    "value": "a[class='login user-name']",
+    "type": "css"
   },
   {
     "key": "topCategory",
@@ -61,13 +61,13 @@
   },
   {
     "key": "subCategory",
-    "value": "//a[@class=\"menu-item\"]",
-    "type": "xpath"
+    "value": "a[class=\"menu-item\"]",
+    "type": "css"
   },
   {
     "key": "brandName",
-    "value": "//ol[@class=\"show-all-brands scrollable-filter-container scroll-lock\"]/li",
-    "type": "xpath"
+    "value": "ol[class=\"show-all-brands scrollable-filter-container scroll-lock\"] > li",
+    "type": "css"
   },
   {
     "key": "inptEnAz",

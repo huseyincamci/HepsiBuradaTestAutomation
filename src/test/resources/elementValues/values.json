@@ -1,0 +1,287 @@
+[
+  {
+    "key": "hoverAccount",
+    "value": "myAccount",
+    "type": "id"
+  },
+  {
+    "key": "myAccount",
+    "value": "//*[@id=\"myAccount\"]//a[contains(text(), 'Hesabım')]",
+    "type": "xpath"
+  },
+  {
+    "key": "account",
+    "value": "//*[@id=\"accountmenu\"]//a[@class='NavigationMenuItem-2vZ2Z']",
+    "type": "xpath"
+  },
+  {
+    "key": "loginLink",
+    "value": "login",
+    "type": "id"
+  },
+  {
+    "key": "email",
+    "value": "email",
+    "type": "id"
+  },
+  {
+    "key": "password",
+    "value": "password",
+    "type": "id"
+  },
+  {
+    "key": "shoppingCart",
+    "value": "shoppingCart",
+    "type": "id"
+  },
+  {
+    "key": "cartItemCount",
+    "value": "cartItemCount",
+    "type": "id"
+  },
+  {
+    "key": "totalPrice",
+    "value": "/html/body/div[1]/div[3]/div/div[1]/aside/section/div/div[1]/div[1]/div/span",
+    "type": "xpath"
+  },
+  {
+    "key": "loginBtn",
+    "value": "//*[@class=\"btn full btn-login-submit\"]",
+    "type": "xpath"
+  },
+  {
+    "key": "loginUserName",
+    "value": "//a[@class='login user-name']",
+    "type": "xpath"
+  },
+  {
+    "key": "topCategory",
+    "value": "//*[@class='menu browser-by-category']/li[@id]",
+    "type": "xpath"
+  },
+  {
+    "key": "subCategory",
+    "value": "//a[@class=\"menu-item\"]",
+    "type": "xpath"
+  },
+  {
+    "key": "brandName",
+    "value": "//ol[@class=\"show-all-brands scrollable-filter-container scroll-lock\"]/li",
+    "type": "xpath"
+  },
+  {
+    "key": "inptEnAz",
+    "value": "//input[contains(@placeholder, \"En az\")]",
+    "type": "xpath"
+  },
+  {
+    "key": "inptEnCok",
+    "value": "//input[contains(@placeholder, \"En çok\")]",
+    "type": "xpath"
+  },
+  {
+    "key": "listProduct",
+    "value": "//div[@class=\"box product\"]",
+    "type": "xpath"
+  },
+  {
+    "key": "filterPrice",
+    "value": "//div[@class=\"range-contain-row right\"]/button[@class=\"button small\"]",
+    "type": "xpath"
+  },
+  {
+    "key": "productPriceInProductList",
+    "value": "//span[@class=\"price product-price\"] | //div[@class=\"price-value\"]",
+    "type": "xpath"
+  },
+  {
+    "key": "priceInProductDetail",
+    "value": "//div[@class=\"extra-discount-price\"]/span | //span[@class=\"price merchant\"]",
+    "type": "xpath"
+  },
+  {
+    "key": "addToCart",
+    "value": "addToCart",
+    "type": "id"
+  },
+  {
+    "key": "quantityInProductDetail",
+    "value": "quantity",
+    "type": "id"
+  },
+  {
+    "key": "increase",
+    "value": "//*[@id=\"form-item-list\"]/ul/li/div/div[2]/div/button[2]",
+    "type": "xpath"
+  },
+  {
+    "key": "completeShopping",
+    "value": "button.btn.btn-primary.full",
+    "type": "css"
+  },
+  {
+    "key": "btnRemoveProduct",
+    "value": "//div/a[contains(text(),'Sil')]",
+    "type": "xpath"
+  },
+  {
+    "key": "btnAddNewAddress",
+    "value": " //*[@class='col delivery-addresses']/div/a",
+    "type": "xpath"
+  },
+  {
+    "key": "btnSaveAddress",
+    "value": "//*[@id=\"form-address\"]/div/div/div[5]/div/button",
+    "type": "xpath"
+  },
+  {
+    "key": "firstName",
+    "value": "first-name",
+    "type": "id"
+  },
+  {
+    "key": "lastName",
+    "value": "last-name",
+    "type": "id"
+  },
+  {
+    "key": "btnCountry",
+    "value": "select[id='country'] + div button",
+    "type": "css"
+  },
+  {
+    "key": "cmbSelectCountry",
+    "value": "//select[@id='country']/following-sibling::div//div[@class='dropdown-menu open']//ul/li/a[./span[text()='Türkiye']]",
+    "type": "xpath"
+  },
+  {
+    "key": "btnCity",
+    "value": "select[id='city'] + div button",
+    "type": "css"
+  },
+  {
+    "key": "cmbSelectCity",
+    "value": "//select[@id='city']/following-sibling::div//div[@class='dropdown-menu open']//ul/li/a[./span[text()='Giresun']]",
+    "type": "xpath"
+  },
+  {
+    "key": "btnTown",
+    "value": "select[id='town'] + div button",
+    "type": "css"
+  },
+  {
+    "key": "cmbSelectTown",
+    "value": "//select[@id='town']/following-sibling::div//div[@class='dropdown-menu open']//ul/li/a[./span[text()='MERKEZ']]",
+    "type": "xpath"
+  },
+  {
+    "key": "btnDistrict",
+    "value": "select[id='district'] + div button",
+    "type": "css"
+  },
+  {
+    "key": "cmbSelectDistrict",
+    "value": "//select[@id='district']/following-sibling::div//div[@class='dropdown-menu open']//ul/li/a[./span[text()='MERKEZ']]",
+    "type": "xpath"
+  },
+  {
+    "key": "txtAddress",
+    "value": "//*[@class='controls animateTextarea']/textarea",
+    "type": "xpath"
+  },
+  {
+    "key": "txtAddressName",
+    "value": "//*[@id='address-name']",
+    "type": "xpath"
+  },
+  {
+    "key": "txtPhoneNumber",
+    "value": "//*[@id='phone']",
+    "type": "xpath"
+  },
+  {
+    "key": "btnGoOn",
+    "value": "//button[@class=\"btn btn-primary full\"]",
+    "type": "xpath"
+  },
+  {
+    "key": "btnCreditCard",
+    "value": "//*[@id=\"payment-container\"]/div[3]/div/div/div[1]/a",
+    "type": "xpath"
+  },
+  {
+    "key": "cardNo",
+    "value": "card-no",
+    "type": "id"
+  },
+  {
+    "key": "holderName",
+    "value": "holder-Name",
+    "type": "id"
+  },
+  {
+    "key": "btnMonth",
+    "value": "//*[@id=\"payment-type-1\"]/div/form/fieldset/div[3]/div/div[1]/div/button",
+    "type": "xpath"
+  },
+  {
+    "key": "cmbSelectMonth",
+    "value": "//*[@id=\"payment-type-1\"]/div/form/fieldset/div[3]/div/div[1]/div/div/ul/li/a/span[contains(text(), '01')]",
+    "type": "xpath"
+  },
+  {
+    "key": "btnYear",
+    "value": "//*[@id=\"payment-type-1\"]/div/form/fieldset/div[3]/div/div[2]/div/button",
+    "type": "xpath"
+  },
+  {
+    "key": "cmbSelectYear",
+    "value": "//*[@id=\"payment-type-1\"]/div/form/fieldset/div[3]/div/div[2]/div/div/ul/li/a/span[contains(text(), '2023')]",
+    "type": "xpath"
+  },
+  {
+    "key": "cvc",
+    "value": "cvc",
+    "type": "id"
+  },
+  {
+    "key": "linkMyAddress",
+    "value": "//*[@id=\"accountmenu\"]/div/div/div[2]/div/div[6]/a",
+    "type": "xpath"
+  },
+  {
+    "key": "btnDeleteAddress",
+    "value": "//*[@id=\"customer-addresses\"]//a[contains(text(),'Sil')]",
+    "type": "xpath"
+  },
+  {
+    "key": "btnConfirmDelete",
+    "value": "//*[@id=\"customer-addresses\"]//a[@class=\"btn btn-md\"]",
+    "type": "xpath"
+  },
+  {
+    "key": "productName",
+    "value": "product-name",
+    "type": "id"
+  },
+  {
+    "key": "btnAdetArttir",
+    "value": "button.button.effective.icon.icon-plus",
+    "type": "css"
+  },
+  {
+    "key": "emptyCart",
+    "value": "//*[@id=\"content\"]//div[@class=\"empty-cart-icon-container\"]",
+    "type": "xpath"
+  },
+  {
+    "key": "shippingPrice",
+    "value": "//*[@id=\"item-prices\"]/div/div[2]/div[2]",
+    "type": "xpath"
+  },
+  {
+    "key": "sepetUrunFiyati",
+    "value": "//*[@id=\"form-item-list\"]//div[@class=\"price\"]/span",
+    "type": "xpath"
+  }
+]

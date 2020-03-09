@@ -1,0 +1,95 @@
+Created by testinium on 5.03.2020
+
+This is a concept file with following syntax for each concept.
+# HepsiBurada.com sayfası açılır ve giriş yapılır
+* Click login link
+* Write "testautomationzerotohero@gmail.com" to email input
+* Write "Ankara01!" to password input
+* Login ol
+
+# Login kontrolü yapılır. Eğer login başarılı olmuşsa sepet tutar kontrol edilir
+* Validate login
+* Check total price in shopping cart
+* If shopping cart has items, Clear shopping cart
+
+# Anasayfa'ya gidilir
+* Go "http://www.hepsiburada.com" address
+
+# Rastgele bir kategorinin üzerine gelinir ve alt kategorilerden rastgele bir alt kategori seçilir
+* Click random category
+
+# Rastgele bir marka seçilir
+* Select random brand
+
+# Fiyat aralığına <min-price> ile <max-price> değerleri girilir ve filtrelenir
+* Write <min-price> value to "inptEnAz" element
+* Write <max-price> value to "inptEnCok" element
+* Click element by "filterPrice"
+
+# Rastgele bir ürün seçilir. Ürünün ismi ve tutar bilgisi csv dosyasına yazdırılır
+* Select random product
+
+# Ürün detay sayfasında ilk olarak bir önceki sayfada aldığınız ürünün fiyatı ile detay sayfasındaki fiyatı karşılaştırılıp kontrol edilir
+* Wait "1" milliseconds
+
+# Seçilen ürün sepete eklenir
+* Click element by "addToCart"
+
+# Eklenen ürün adeti sayısı ile sepettin üzerindeki sayı kontrol edilir ve sepete gidilir
+* Wait "1" milliseconds
+
+# Adet sayısı <count> arttırılır ve tutar kontrol edilir
+* Ürün sayısını "2" arttır
+* Tutarı kontrol et
+
+# Complete the shopping
+* Click element by "completeShopping"
+
+# Ürün toplamı değeri ve kargo tutarı csv dosyasına yazdırılır
+* Ürün toplamı ve kargo tutarı csv ye yazdır
+
+# Adres bilgileri girilir
+* Click element by "btnAddNewAddress"
+* Write "Deneme" value to "firstName" element
+* Write "Denemewwww" value to "lastName" element
+* Click element by "btnCountry"
+* Click element by "cmbSelectCountry"
+* Click element by "btnCity"
+* Click element by "cmbSelectCity"
+* Click element by "btnTown"
+* Click element by "cmbSelectTown"
+* Click element by "btnDistrict"
+* Click element by "cmbSelectDistrict"
+
+* Write "Xaml dsldfsldjf sdf df" value to "txtAddress" element
+* Write "Ev Adresi" value to "txtAddressName" element
+* Write "5432422344" value to "txtPhoneNumber" element
+* Click element by "btnSaveAddress"
+* Wait "2" seconds
+* Click element by "btnGoOn"
+* Wait "2" seconds
+
+# Ödeme tipi kredi kartı seçilir
+* Click element by "btnCreditCard"
+* Wait "2" seconds
+
+# Kredi kartı bilgileri girilir ve anasayfaya gidilir
+* Write "4444666677778888" value to "cardNo" element
+* Write "Deneme Teakdfjksda" value to "holderName" element
+* Click element by "btnMonth"
+* Click element by "cmbSelectMonth"
+* Click element by "btnYear"
+* Click element by "cmbSelectYear"
+* Write "876" value to "cvc" element
+* Go "http://www.hepsiburada.com" address
+
+# Sepete tıklanır ve sepet temizlenir
+* Click element by "shoppingCart"
+* If shopping cart has items, Clear shopping cart
+
+# Adreslerim alanına gidilir ve eklenen adresler silinir
+* Hover on "hoverAccount"
+* Click element by "myAccount"
+* Go "https://www.hepsiburada.com/ayagina-gelsin/teslimat-adreslerim" address
+* Clear all addresses
+* Wait "2" seconds

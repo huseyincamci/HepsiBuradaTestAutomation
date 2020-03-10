@@ -11,10 +11,9 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.List;
+import java.util.Scanner;
 
 public class BaseStep extends BaseTest {
     public Actions actions;
@@ -110,23 +109,35 @@ public class BaseStep extends BaseTest {
         actions.moveToElement(element).build().perform();
     }
 
-    public void writeToCsv(String filePath, String productName, String price) {
+    public void writeToCsv(String filePath, String text) {
         try {
-            File myObj = new File(filePath);
-            if (myObj.createNewFile()) {
-                System.out.println("File created: " + myObj.getName());
-            } else {
-                System.out.println("File already exists.");
-            }
+            File file = new File(filePath);
+            file.createNewFile();
 
-            FileWriter writer = new FileWriter(filePath);
-            writer.write(productName + " - " + price);
+            FileWriter writer = new FileWriter(filePath, true);
+            writer.write(text);
             writer.write("\n");
             writer.close();
 
         } catch (IOException e) {
-            System.out.println("An error occurred.");
             e.printStackTrace();
         }
+    }
+
+    public String readCsvFile(String path) {
+        try {
+            File file = new File(path);
+            Scanner scanner = new Scanner(file);
+            StringBuilder stringBuilder = new StringBuilder();
+            while (scanner.hasNextLine()) {
+                stringBuilder.append(scanner.nextLine());
+                stringBuilder.append('\n');
+            }
+
+            return stringBuilder.toString();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }

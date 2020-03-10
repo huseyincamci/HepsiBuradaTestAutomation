@@ -10,11 +10,6 @@
     "type": "xpath"
   },
   {
-    "key": "account",
-    "value": "//*[@id=\"accountmenu\"]//a[@class='NavigationMenuItem-2vZ2Z']",
-    "type": "xpath"
-  },
-  {
     "key": "loginLink",
     "value": "login",
     "type": "id"
@@ -36,18 +31,23 @@
   },
   {
     "key": "cartItemCount",
-    "value": "span[id=\"cartItemCount\"]>label",
+    "value": "span[id=\"cartItemCount\"]",
     "type": "css"
   },
   {
     "key": "totalPrice",
-    "value": "/html/body/div[1]/div[3]/div/div[1]/aside/section/div/div[1]/div[1]/div/span",
-    "type": "xpath"
+    "value": "div.total-price>span",
+    "type": "css"
+  },
+  {
+    "key": "sepetToplamUrunFiyati",
+    "value": "div#item-prices div.list-item div.price",
+    "type": "css"
   },
   {
     "key": "loginBtn",
-    "value": "//*[@class=\"btn full btn-login-submit\"]",
-    "type": "xpath"
+    "value": "form#form-login .form-actions button[class='btn full btn-login-submit']",
+    "type": "css"
   },
   {
     "key": "loginUserName",
@@ -91,8 +91,8 @@
   },
   {
     "key": "productPriceInProductList",
-    "value": "//span[@class=\"price product-price\"] | //div[@class=\"price-value\"]",
-    "type": "xpath"
+    "value": "span[class='price product-price'],div[class='price-value']",
+    "type": "css"
   },
   {
     "key": "priceInProductDetail",
@@ -201,8 +201,8 @@
   },
   {
     "key": "btnGoOn",
-    "value": "//button[@class=\"btn btn-primary full\"]",
-    "type": "xpath"
+    "value": "button[class='btn btn-primary full']",
+    "type": "css"
   },
   {
     "key": "btnCreditCard",
@@ -271,17 +271,17 @@
   },
   {
     "key": "emptyCart",
-    "value": "//*[@id=\"content\"]//div[@class=\"empty-cart-icon-container\"]",
-    "type": "xpath"
+    "value": "div.empty-cart-icon-container",
+    "type": "css"
   },
   {
     "key": "shippingPrice",
-    "value": "//*[@id=\"item-prices\"]/div/div[2]/div[2]",
-    "type": "xpath"
+    "value": "div.sidebar-list .list-item > .price > strong[data-bind='text: shippingPrice']",
+    "type": "css"
   },
   {
     "key": "sepetUrunFiyati",
-    "value": "//*[@id=\"form-item-list\"]//div[@class=\"price\"]/span",
-    "type": "xpath"
+    "value": ".product-prices-utils > .price > span[data-bind='html: price']",
+    "type": "css"
   }
 ]

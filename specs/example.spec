@@ -18,7 +18,7 @@ Get Started
 * Ürün detay sayfasında ilk olarak bir önceki sayfada aldığınız ürünün fiyatı ile detay sayfasındaki fiyatı karşılaştırılıp kontrol edilir
 * Seçilen ürün sepete eklenir
 * Write the product name and the price to csv file
-* Eklenen ürün adeti sayısı ile sepettin üzerindeki sayı kontrol edilir ve sepete gidilir
+* Eklenen ürün adeti sayısı ile sepetin üzerindeki sayı kontrol edilir ve sepete gidilir
 * Go shopping cart page
 * Adet sayısı "2" arttırılır ve tutar kontrol edilir
 * Ürün toplamı değeri ve kargo tutarı csv dosyasına yazdırılır

@@ -20,21 +20,18 @@ public class StepImplementation extends BaseStep {
     public void writeEmailValue(String value) {
         WebElement emailInput = findElementByKey("email");
         sendKeys(emailInput, "testautomationzerotohero@gmail.com");
-        // waitBySeconds(2);
     }
 
     @Step("Write <value> to password input")
     public void writePasswordValue(String value) {
         WebElement passwordInput = findElementByKey("password");
         sendKeys(passwordInput, value);
-        // waitBySeconds(2);
     }
 
     @Step("Login ol")
     public void login() {
         WebElement element = findElementByKey("loginBtn");
         element.click();
-        //waitBySeconds(2);
     }
 
     @Step("Validate login")
@@ -65,7 +62,6 @@ public class StepImplementation extends BaseStep {
         List<WebElement> subCategories = findElementsByKey("subCategory");
         WebElement subCategory = getRandomElement(subCategories);
         subCategory.click();
-        //  waitBySeconds(2);
     }
 
     @Step("Select random brand")
@@ -73,14 +69,12 @@ public class StepImplementation extends BaseStep {
         List<WebElement> elements = findElementsByKey("brandName");
         WebElement brand = getRandomElement(elements);
         brand.click();
-        //  waitBySeconds(2);
     }
 
     @Step("Write <value> value to <key> element")
     public void writeValueToElement(String value, String key) {
         WebElement element = findElementByKey(key);
         sendKeys(element, value);
-        // waitBySeconds(2);
     }
 
     @Step("Select random product")
@@ -88,14 +82,15 @@ public class StepImplementation extends BaseStep {
         List<WebElement> elements = findElementsByKey("listProduct");
 
         WebElement element = getRandomElement(elements);
+        getProductPrice(element);
         element.click();
 
     }
 
     @Step("Check product count in added product's count and my cart icon")
     public void checkProductCount() {
-        WebElement productCount = findElementByKey("quantity");
-        int count = Integer.parseInt(productCount.getText().trim());
+        WebElement productCount = findElementByKey("quantityInProductDetail");
+        int count = Integer.parseInt(productCount.getAttribute("value").trim());
 
         WebElement element = findElementByKey("cartItemCount");
         int itemCount = Integer.parseInt(element.getText());
@@ -107,7 +102,7 @@ public class StepImplementation extends BaseStep {
     public void writeProductNameAndPriceToCsv() {
         String productName = findElementByKey("productName").getText();
         String price = findElementByKey("priceInProductDetail").getText();
-        writeToCsv("information.csv", productName, price);
+        writeToCsv("information.csv", productName + "-" + price);
     }
 
     @Step("Ürün sayısını <count> arttır")
@@ -126,21 +121,19 @@ public class StepImplementation extends BaseStep {
         String totalPrice = element.getText();
         WebElement shipping = findElementByKey("shippingPrice");
         String shippingPrice = shipping.getText();
-        writeToCsv("productandshippingprice.csv", totalPrice, shippingPrice);
+        writeToCsv("productandshippingprice.csv", totalPrice + "-" + shippingPrice);
     }
 
 
     public void getProductPrice(WebElement element) {
         WebElement priceLabel = element.findElement(getBy("productPriceInProductList"));
         String priceTxt = priceLabel.getText().split(" ")[0].replace(".", "").replace(",", ".");
-        float price = Float.parseFloat(priceTxt);
-        Assert.assertEquals("", price, getPriceInProductDetail());
+        writeToCsv("information.csv", priceTxt);
     }
 
-    public float getPriceInProductDetail() {
+    public String getPriceInProductDetail() {
         WebElement priceInProductDetail = findElementByKey("priceInProductDetail");
-        String priceTxt = priceInProductDetail.getText().split(" ")[0].replace(".", "").replace(",", ".");
-        return Float.parseFloat(priceTxt);
+        return priceInProductDetail.getText().split(" ")[0].replace(".", "").replace(",", ".");
     }
 
     @Step("Click element by <key>")
@@ -165,7 +158,6 @@ public class StepImplementation extends BaseStep {
         waitBySeconds(3);
         WebElement element = findElementByKey("shoppingCart");
         element.click();
-        //waitBySeconds(2);
         getTotalPrice();
     }
 
@@ -232,11 +224,18 @@ public class StepImplementation extends BaseStep {
     }
 
     @Step("Tutarı kontrol et")
-    public void implementation2() {
+    public void checkPriceInCart() {
         WebElement element = findElementByKey("sepetUrunFiyati");
         String price = element.getText().split(" ")[0];
-        WebElement totalPriceLabel = findElementByKey("totalPrice");
+        WebElement totalPriceLabel = findElementByKey("sepetToplamUrunFiyati");
         String totalPrice = totalPriceLabel.getText().split(" ")[0];
         Assert.assertEquals(price, totalPrice);
+    }
+
+    @Step("Fiyat kontrolü yap")
+    public void checkPrice() {
+        String text = readCsvFile("information.csv");
+        String price = text.split("\n")[0];
+        Assert.assertEquals(price, getPriceInProductDetail());
     }
 }

@@ -30,13 +30,13 @@ This is a concept file with following syntax for each concept.
 * Select random product
 
 # Ürün detay sayfasında ilk olarak bir önceki sayfada aldığınız ürünün fiyatı ile detay sayfasındaki fiyatı karşılaştırılıp kontrol edilir
-* Wait "1" milliseconds
+* Fiyat kontrolü yap
 
 # Seçilen ürün sepete eklenir
 * Click element by "addToCart"
 
-# Eklenen ürün adeti sayısı ile sepettin üzerindeki sayı kontrol edilir ve sepete gidilir
-* Wait "1" milliseconds
+# Eklenen ürün adeti sayısı ile sepetin üzerindeki sayı kontrol edilir ve sepete gidilir
+* Check product count in added product's count and my cart icon
 
 # Adet sayısı <count> arttırılır ve tutar kontrol edilir
 * Ürün sayısını "2" arttır
